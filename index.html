@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To My Muse — A Sanctuary of Your Beauty</title>
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       ROMANTIC COLOR PALETTE & RESET
+       ========================================================= */
+    :root {
+      --bg-cream: #fcf8f6;
+      --bg-blush: #fbf1ef;
+      --rose-100: #fae1dd;
+      --rose-200: #f8c8c4;
+      --rose-400: #e57c86;
+      --rose-600: #c93b54;
+      --crimson: #89163b;
+      --velvet: #530d22;
+      --gold: #d4af37;
+      --gold-light: #fbeea4;
+      --text-main: #3d2b2e;
+      --text-muted: #7d686b;
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --card-border: rgba(232, 190, 194, 0.55);
+      --glass-shadow: 0 15px 35px rgba(137, 22, 59, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+      --font-serif: 'Cormorant Garamond', 'Playfair Display', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Romantic Background Glow */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      right: -10%;
+      width: 70vw;
+      height: 70vw;
+      background: radial-gradient(circle, rgba(248, 200, 196, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -15%;
+      left: -10%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(250, 225, 221, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* =========================================================
+       FLOATING CSS HEARTS BACKGROUND
+       ========================================================= */
+    .floating-hearts-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart-bubble {
+      position: absolute;
+      bottom: -50px;
+      color: var(--rose-200);
+      font-size: 1.2rem;
+      animation: floatUp 15s linear infinite;
+      opacity: 0;
+    }
+
+    .heart-bubble:nth-child(1) { left: 8%; animation-duration: 14s; animation-delay: 0s; font-size: 1.5rem; color: #fbc6c4; }
+    .heart-bubble:nth-child(2) { left: 24%; animation-duration: 19s; animation-delay: 2s; font-size: 1rem; color: #fcd5d3; }
+    .heart-bubble:nth-child(3) { left: 42%; animation-duration: 16s; animation-delay: 5s; font-size: 1.8rem; color: #faafac; }
+    .heart-bubble:nth-child(4) { left: 60%; animation-duration: 18s; animation-delay: 1s; font-size: 1.2rem; color: #fbc6c4; }
+    .heart-bubble:nth-child(5) { left: 78%; animation-duration: 13s; animation-delay: 4s; font-size: 2rem; color: #fcdbd8; }
+    .heart-bubble:nth-child(6) { left: 92%; animation-duration: 21s; animation-delay: 6s; font-size: 1.1rem; color: #fca8a4; }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.6;
+      }
+      85% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* =========================================================
+       TYPOGRAPHY & UTILITIES
+       ========================================================= */
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--crimson);
+      letter-spacing: -0.02em;
+    }
+
+    .section-tag {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      color: var(--rose-600);
+      background: rgba(201, 59, 84, 0.08);
+      border: 1px solid rgba(201, 59, 84, 0.2);
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 0.75rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================================================
+       NAVIGATION BAR
+       ========================================================= */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 246, 240, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 0.85rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--crimson);
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+    .nav-brand i {
+      color: var(--rose-600);
+      font-size: 1.15rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-links a:hover {
+      color: var(--rose-600);
+    }
+
+    /* =========================================================
+       HERO BANNER
+       ========================================================= */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--velvet);
+    }
+    .hero h1 span {
+      font-style: italic;
+      color: var(--rose-600);
+      background: linear-gradient(135deg, var(--rose-600), var(--crimson));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+    .hero-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-romantic {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--rose-600), var(--crimson));
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(137, 22, 59, 0.25);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-romantic:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(137, 22, 59, 0.35);
+    }
+    .btn-secondary {
+      background: #fff;
+      color: var(--crimson);
+      border: 1px solid var(--rose-200);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .btn-secondary:hover {
+      background: var(--rose-100);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       SECTION: THE 4 PICTURE FRAMES OF HER
+       ========================================================= */
+    .beauty-gallery-section {
+      padding: 4.5rem 0;
+    }
+    .gallery-intro {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .gallery-intro h2 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .gallery-intro p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 4-Picture Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Luxury Picture Frame Styling */
+    .photo-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: var(--glass-shadow);
+      border: 1px solid var(--card-border);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(201, 59, 84, 0.18);
+      border-color: var(--rose-400);
+    }
+
+    /* The Image Box */
+    .photo-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 330px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f7ebe9;
+    }
+    .photo-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+    .photo-card:hover .photo-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    /* Rose Gold Inner Frame Accent */
+    .photo-img-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
+      pointer-events: none;
+      transition: border-color 0.3s ease;
+    }
+    .photo-card:hover .photo-img-wrapper::after {
+      border-color: rgba(255, 235, 200, 0.85);
+    }
+
+    /* Romantic Badge */
+    .photo-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(83, 13, 34, 0.75);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 30px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Description Below Photo */
+    .photo-details {
+      padding: 1.25rem 0.5rem 0.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .photo-details h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.35rem;
+      color: var(--crimson);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .photo-details h3 span {
+      font-size: 1rem;
+      color: var(--rose-400);
+    }
+    .photo-details p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .photo-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--rose-600);
+      font-size: 1rem;
+      border-top: 1px dashed var(--rose-200);
+      padding-top: 0.65rem;
+      margin-top: auto;
+    }
+
+    /* =========================================================
+       SECTION: LOVE GAMES & INTERACTIVE AMUSEMENTS
+       ========================================================= */
+    .games-section {
+      padding: 4.5rem 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(248, 200, 196, 0.25) 50%, transparent 100%);
+    }
+    .games-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .games-intro h2 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .games-intro p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .game-grid-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Game 1: 3D Flip Fortune Cards */
+    .game-box {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 1.8rem;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--glass-shadow);
+    }
+    .game-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+      color: var(--velvet);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .game-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    /* Flip Cards Container */
+    .flip-cards-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .flip-card {
+      height: 160px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: 16px;
+    }
+    .flip-card:hover .flip-inner,
+    .flip-card:focus-within .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border: 1px solid var(--rose-200);
+    }
+    .flip-front {
+      background: linear-gradient(135deg, #fff5f5, #ffeae9);
+      color: var(--crimson);
+    }
+    .flip-front i {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: var(--rose-600);
+    }
+    .flip-front span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .flip-back {
+      background: linear-gradient(135deg, var(--crimson), var(--velvet));
+      color: #fff;
+      transform: rotateY(180deg);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* Game 2: CSS Scratch-Off / Reveal Promises */
+    .scratch-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .scratch-item {
+      position: relative;
+      height: 60px;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+    .scratch-secret {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 16px;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--crimson);
+      border: 1px solid var(--rose-200);
+      border-radius: 14px;
+    }
+    .scratch-secret i {
+      color: var(--rose-600);
+    }
+    .scratch-foil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #f7d5da 0%, #f4b8c0 50%, #f2a6b1 100%);
+      color: var(--velvet);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.4s ease;
+      border-radius: 14px;
+    }
+    .scratch-foil i {
+      font-size: 0.9rem;
+      color: var(--crimson);
+    }
+    /* Hover to "scratch / slide open" */
+    .scratch-item:hover .scratch-foil {
+      transform: translateX(100%);
+      opacity: 0.1;
+    }
+
+    /* Game 3: Pure HTML/CSS Sweet Love Quiz */
+    .quiz-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .quiz-question {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--velvet);
+      margin-bottom: 0.4rem;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .quiz-option {
+      position: relative;
+    }
+    .quiz-option input[type="radio"] {
+      display: none;
+    }
+    .quiz-option label {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid var(--rose-200);
+      font-size: 0.85rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .quiz-option input[type="radio"]:checked + label {
+      background: var(--rose-100);
+      border-color: var(--rose-600);
+      color: var(--crimson);
+      font-weight: 600;
+      padding-left: 20px;
+    }
+    .quiz-feedback {
+      display: none;
+      font-size: 0.8rem;
+      color: var(--rose-600);
+      margin-top: 4px;
+      padding-left: 8px;
+      font-style: italic;
+    }
+    .quiz-option input[type="radio"]:checked ~ .quiz-feedback {
+      display: block;
+    }
+
+    /* Game 4: Reasons I Adore You (Interactive Accordion) */
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .accordion-item {
+      background: #fff;
+      border: 1px solid var(--rose-200);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .accordion-item:hover {
+      border-color: var(--rose-400);
+    }
+    .accordion-header {
+      width: 100%;
+      text-align: left;
+      padding: 14px 18px;
+      background: none;
+      border: none;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--crimson);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .accordion-header i {
+      font-size: 0.85rem;
+      transition: transform 0.3s ease;
+      color: var(--rose-400);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 18px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    /* Target via :focus-within or open state */
+    .accordion-item:focus-within .accordion-content,
+    .accordion-item:hover .accordion-content {
+      max-height: 120px;
+      padding-bottom: 14px;
+    }
+    .accordion-item:focus-within .accordion-header i,
+    .accordion-item:hover .accordion-header i {
+      transform: rotate(180deg);
+      color: var(--rose-600);
+    }
+
+    /* =========================================================
+       SECTION: SEALED LOVE LETTER & WAX SEAL
+       ========================================================= */
+    .letter-section {
+      padding: 5rem 0 6rem;
+    }
+    .letter-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .envelope-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      border: 1px solid var(--rose-200);
+      box-shadow: 0 25px 60px rgba(137, 22, 59, 0.08), 0 5px 15px rgba(0,0,0,0.03);
+      position: relative;
+      background-image: radial-gradient(#faf0ef 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    
+    /* Wax Seal Header Badge */
+    .wax-seal {
+      width: 72px;
+      height: 72px;
+      background: radial-gradient(circle at 35% 35%, #9e1a44, #530d22);
+      border-radius: 50%;
+      margin: -4.8rem auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffd7e0;
+      font-size: 1.7rem;
+      box-shadow: 0 6px 18px rgba(83, 13, 34, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+      border: 3px solid #b82352;
+      position: relative;
+    }
+    .wax-seal::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(184, 35, 82, 0.4);
+    }
+
+    .letter-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--rose-100);
+      padding-bottom: 1.5rem;
+    }
+    .letter-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .letter-header span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--rose-400);
+      font-weight: 600;
+    }
+
+    .letter-body {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 1.85;
+      color: #3b282c;
+    }
+    .letter-body p {
+      margin-bottom: 1.4rem;
+      text-indent: 1.5rem;
+    }
+    .letter-body p:first-of-type {
+      text-indent: 0;
+    }
+
+    .letter-footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rose-100);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .letter-signature {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.8rem;
+      color: var(--rose-600);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .letter-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: #fdf5f3;
+      position: relative;
+      z-index: 2;
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+    footer i {
+      color: var(--rose-600);
+    }
+
+    /* =========================================================
+       RESPONSIVENESS
+       ========================================================= */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.4rem; }
+      .nav-links { display: none; } /* Kept simple & clean on mobile */
+      .photo-img-wrapper { height: 280px; }
+      .flip-cards-container { grid-template-columns: 1fr; }
+      .envelope-card { padding: 2.5rem 1.5rem; }
+      .letter-body { font-size: 1.1rem; line-height: 1.7; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Ambient Hearts in Background (Pure CSS) -->
+  <div class="floating-hearts-container">
+    <div class="heart-bubble"><i class="fa-solid fa-heart"></i></div>
+    <div class="heart-bubble"><i class="fa-solid fa-heart"></i></div>
+    <div class="heart-bubble"><i class="fa-solid fa-heart"></i></div>
+    <div class="heart-bubble"><i class="fa-solid fa-heart"></i></div>
+    <div class="heart-bubble"><i class="fa-solid fa-heart"></i></div>
+    <div class="heart-bubble"><i class="fa-solid fa-heart"></i></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand">
+        <i class="fa-solid fa-heart"></i>
+        <span>My Beloved</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#pictures"><i class="fa-solid fa-camera-retro"></i> Her 4 Portraits</a></li>
+        <li><a href="#games"><i class="fa-solid fa-gamepad"></i> Love Games</a></li>
+        <li><a href="#letter"><i class="fa-solid fa-envelope"></i> Secret Letter</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <span class="section-tag"><i class="fa-solid fa-sparkles"></i> Dedicated to My Whole World</span>
+      <h1>Every Moment With You is <span>Unrivaled Beauty</span></h1>
+      <p>
+        They say the universe took billions of years to perfect its galaxies, but it only reached true perfection the day you came into this world. Here is a celebration of you.
+      </p>
+      <div class="hero-btn-group">
+        <a href="#pictures" class="btn-romantic"><i class="fa-solid fa-camera"></i> Gaze at Her Photos</a>
+        <a href="#games" class="btn-romantic btn-secondary"><i class="fa-solid fa-dice"></i> Play Love Games</a>
+        <a href="#letter" class="btn-romantic btn-secondary"><i class="fa-solid fa-feather"></i> Read Love Letter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION: 4 DEDICATED PICTURES OF HER
+       (Easily replace the src="" with your girlfriend's photos!)
+       ========================================================= -->
+  <section id="pictures" class="beauty-gallery-section">
+    <div class="container">
+      <div class="gallery-intro">
+        <span class="section-tag"><i class="fa-solid fa-gem"></i> Four Portals to Heaven</span>
+        <h2>The Four Portraits of Her Beauty</h2>
+        <p>A tribute to the eyes that guide me, the smile that saves me, and the grace that makes everything brighter.</p>
+      </div>
+
+      <div class="photo-grid">
+
+        <!-- =====================================================
+             PICTURE 1: HER EYES
+             ===================================================== -->
+        <article class="photo-card">
+          <div class="photo-img-wrapper">
+            <!-- REPLACE WITH HER PHOTO 1 BELOW: Swap the src link with her picture URL -->
+            <img 
+              src="A4.jfif" 
+              alt="Her Eyes"
+              loading="lazy"
+            >
+            <span class="photo-tag">01 • Radiance</span>
+          </div>
+          <div class="photo-details">
+            <div>
+              <h3>Her Eyes <span><i class="fa-solid fa-eye"></i></span></h3>
+              <p>The universe in miniature. In their gentle warmth, all my doubts dissolve into quiet peace.</p>
+            </div>
+            <div class="photo-quote">
+              "Looking at you is like seeing tomorrow for the very first time."
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PICTURE 2: HER SMILE
+             ===================================================== -->
+        <article class="photo-card">
+          <div class="photo-img-wrapper">
+            <!-- REPLACE WITH HER PHOTO 2 BELOW: Swap the src link with her picture URL -->
+            <img 
+              src="A2.jfif" 
+              alt="Her Smile"
+              loading="lazy"
+            >
+            <span class="photo-tag">02 • Sunshine</span>
+          </div>
+          <div class="photo-details">
+            <div>
+              <h3>Her Smile <span><i class="fa-solid fa-sun"></i></span></h3>
+              <p>The crinkle by your eyes when you laugh uncontrollably is my most sacred masterpiece.</p>
+            </div>
+            <div class="photo-quote">
+              "A dawn that breaks even in the middle of the darkest night."
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PICTURE 3: HER GRACE
+             ===================================================== -->
+        <article class="photo-card">
+          <div class="photo-img-wrapper">
+            <!-- REPLACE WITH HER PHOTO 3 BELOW: Swap the src link with her picture URL -->
+            <img 
+              src="A3.jfif" 
+              alt="Her Grace"
+              loading="lazy"
+            >
+            <span class="photo-tag">03 • Elegance</span>
+          </div>
+          <div class="photo-details">
+            <div>
+              <h3>Her Grace <span><i class="fa-solid fa-dove"></i></span></h3>
+              <p>Softness paired with unbreakable strength. You carry kindness with the poise of an angel.</p>
+            </div>
+            <div class="photo-quote">
+              "Effortlessly beautiful without ever needing to try."
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PICTURE 4: HER ESSENCE
+             ===================================================== -->
+        <article class="photo-card">
+          <div class="photo-img-wrapper">
+            <!-- REPLACE WITH HER PHOTO 4 BELOW: Swap the src link with her picture URL -->
+            <img 
+              src="A1.jfif" 
+              alt="Her Essence"
+              loading="lazy"
+            >
+            <span class="photo-tag">04 • Soulmate</span>
+          </div>
+          <div class="photo-details">
+            <div>
+              <h3>Her Essence <span><i class="fa-solid fa-heart"></i></span></h3>
+              <p>Your tender laughter, your playful soul, and the deep love you pour into the people around you.</p>
+            </div>
+            <div class="photo-quote">
+              "My home isn't a place on a map; it's right beside you."
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION: LOVE GAMES & INTERACTIVE AMUSEMENTS
+       ========================================================= -->
+  <section id="games" class="games-section">
+    <div class="container">
+      <div class="games-intro">
+        <span class="section-tag"><i class="fa-solid fa-gamepad"></i> Fun & Sweet Memories</span>
+        <h2>Love Games & Sweet Truths</h2>
+        <p>Interactive little tokens designed to tease your smile and remind you how deeply adored you are.</p>
+      </div>
+
+      <!-- ROW 1: FLIP CARDS & SCRATCH PROMISES -->
+      <div class="game-grid-row">
+
+        <!-- GAME 1: 3D FLIP FORTUNE CARDS -->
+        <div class="game-box">
+          <h3 class="game-title"><i class="fa-solid fa-wand-magic-sparkles text-rose"></i> Love Fortune Cards</h3>
+          <p class="game-subtitle">Hover or tap on any card to flip and reveal a secret fortune about us.</p>
+          
+          <div class="flip-cards-container">
+            <!-- Card 1 -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <i class="fa-solid fa-star"></i>
+                  <span>Card I</span>
+                </div>
+                <div class="flip-back">
+                  "You are getting 1,000 forehead kisses tonight."
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <i class="fa-solid fa-moon"></i>
+                  <span>Card II</span>
+                </div>
+                <div class="flip-back">
+                  "Dinner date where you choose whatever you crave!"
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <i class="fa-solid fa-heart-pulse"></i>
+                  <span>Card III</span>
+                </div>
+                <div class="flip-back">
+                  "I fall in love with you all over again tomorrow."
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <i class="fa-solid fa-gem"></i>
+                  <span>Card IV</span>
+                </div>
+                <div class="flip-back">
+                  "Unlimited cuddles valid for the rest of eternity."
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAME 2: SCRATCH & SLIDE PROMISES -->
+        <div class="game-box">
+          <h3 class="game-title"><i class="fa-solid fa-gift text-rose"></i> Reveal My Promises</h3>
+          <p class="game-subtitle">Hover over the golden tickets to scratch and reveal my promises to you.</p>
+
+          <div class="scratch-cards">
+            <div class="scratch-item">
+              <div class="scratch-secret">
+                <i class="fa-solid fa-utensils"></i> Breakfast in bed anytime you ask
+              </div>
+              <div class="scratch-foil">
+                <span>Scratch Ticket #1</span>
+                <i class="fa-solid fa-angles-right"></i>
+              </div>
+            </div>
+
+            <div class="scratch-item">
+              <div class="scratch-secret">
+                <i class="fa-solid fa-spa"></i> One full 30-minute foot/back massage
+              </div>
+              <div class="scratch-foil">
+                <span>Scratch Ticket #2</span>
+                <i class="fa-solid fa-angles-right"></i>
+              </div>
+            </div>
+
+            <div class="scratch-item">
+              <div class="scratch-secret">
+                <i class="fa-solid fa-film"></i> Movie night where you pick the film
+              </div>
+              <div class="scratch-foil">
+                <span>Scratch Ticket #3</span>
+                <i class="fa-solid fa-angles-right"></i>
+              </div>
+            </div>
+
+            <div class="scratch-item">
+              <div class="scratch-secret">
+                <i class="fa-solid fa-plane-departure"></i> Spontaneous weekend getaway for two
+              </div>
+              <div class="scratch-foil">
+                <span>Scratch Ticket #4</span>
+                <i class="fa-solid fa-angles-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 2: INTERACTIVE QUIZ & ACCORDION -->
+      <div class="game-grid-row">
+
+        <!-- GAME 3: THE "HOW MUCH I LOVE YOU" QUIZ -->
+        <div class="game-box">
+          <h3 class="game-title"><i class="fa-solid fa-clipboard-question text-rose"></i> The Soulmate Quiz</h3>
+          <p class="game-subtitle">Select an answer to reveal how true love works.</p>
+
+          <div class="quiz-form">
+            <div>
+              <div class="quiz-question">1. Who is the most breathtaking woman alive?</div>
+              <div class="quiz-options">
+                <div class="quiz-option">
+                  <input type="radio" id="q1a" name="q1">
+                  <label for="q1a">A) You (obviously)</label>
+                  <div class="quiz-feedback">Correct! 100% indisputable fact.</div>
+                </div>
+                <div class="quiz-option">
+                  <input type="radio" id="q1b" name="q1">
+                  <label for="q1b">B) The girl reading this screen right now</label>
+                  <div class="quiz-feedback">Also correct! There is no wrong answer here!</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="quiz-question">2. How long will I adore you?</div>
+              <div class="quiz-options">
+                <div class="quiz-option">
+                  <input type="radio" id="q2a" name="q2">
+                  <label for="q2a">A) Until the stars burn out</label>
+                  <div class="quiz-feedback">And even several billion years after that!</div>
+                </div>
+                <div class="quiz-option">
+                  <input type="radio" id="q2b" name="q2">
+                  <label for="q2b">B) Forever and ever without end</label>
+                  <div class="quiz-feedback">Bingo! Signed, sealed, and guaranteed.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAME 4: REASONS I ADORE YOU (ACCORDION) -->
+        <div class="game-box">
+          <h3 class="game-title"><i class="fa-solid fa-feather-pointed text-rose"></i> 3 Little Truths</h3>
+          <p class="game-subtitle">Hover or tap on each row to unfold the gentle reasons.</p>
+
+          <div class="accordion-group">
+            <div class="accordion-item" tabindex="0">
+              <div class="accordion-header">
+                <span>The Way You Laugh</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="accordion-content">
+                It isn't just a sound; it's a melody that lifts any heavy cloud from my mind. Hearing your genuine giggle is my daily sanctuary.
+              </div>
+            </div>
+
+            <div class="accordion-item" tabindex="0">
+              <div class="accordion-header">
+                <span>Your Boundless Heart</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="accordion-content">
+                You care with an honesty that puts the world to shame. You inspire me to be softer, kinder, and better every single day.
+              </div>
+            </div>
+
+            <div class="accordion-item" tabindex="0">
+              <div class="accordion-header">
+                <span>Your Unmatched Radiance</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="accordion-content">
+                In oversized sweaters or dressed up for an evening out, you make my heart skip a beat just by stepping into the room.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION: SEALED LOVE LETTER (WAX SEAL STYLING)
+       ========================================================= -->
+  <section id="letter" class="letter-section">
+    <div class="container letter-container">
+      
+      <div class="envelope-card">
+        <!-- Wax Seal Badge -->
+        <div class="wax-seal">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <div class="letter-header">
+          <span class="section-tag"><i class="fa-solid fa-lock-open"></i> From My Heart to Yours</span>
+          <h2>To The Love of My Life</h2>
+          <span>Strictly For Your Eyes Only</span>
+        </div>
+
+        <div class="letter-body">
+          <p>
+            If someone gave me a piece of paper and asked me to write down everything that makes you beautiful, I would run out of ink before I even finished describing the way your eyes crinkle when you're genuinely happy.
+          </p>
+          <p>
+            You walk through life with an effortless grace that you don't even notice. You don't realize how much lighter a room feels the moment you enter it, or how a single glance from you can turn around an entire week of fatigue. Your beauty is not merely physical—though you are, without a doubt, the most gorgeous woman I have ever laid eyes upon. Your true beauty lives in your warmth, your gentleness, and the pure sincerity of your soul.
+          </p>
+          <p>
+            Thank you for being my anchor, my sweetest distraction, and my absolute favorite part of every day. No matter where the years lead us, my hand will always be searching for yours.
+          </p>
+        </div>
+
+        <div class="letter-footer">
+          <div>
+            <div class="letter-date">Written with eternal adoration</div>
+            <div class="letter-signature">Forever & Always Yours</div>
+          </div>
+          <div>
+            <a href="#pictures" class="btn-romantic btn-secondary" style="font-size: 0.85rem; padding: 8px 18px;">
+              <i class="fa-solid fa-arrow-up"></i> Return to Top
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Made with all my heart for the most beautiful girl in the world <i class="fa-solid fa-heart"></i></p>
+      <p style="font-size: 0.75rem; opacity: 0.7;">Forever your biggest admirer.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
